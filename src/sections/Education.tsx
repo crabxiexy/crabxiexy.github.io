@@ -7,7 +7,7 @@ const educationData = [
     degree: 'Bachelor of Computer Science',
     school: 'IIIS (Yao Class), Tsinghua University',
     period: 'August 2023 - July 2027 (expected)',
-    details: ['GPA: 3.81/4.00'],
+    details: ['GPA: 3.8/4.0'],
     achievements: [
       {
         icon: Award,
