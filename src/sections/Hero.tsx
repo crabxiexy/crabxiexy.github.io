@@ -54,7 +54,7 @@ export default function Hero() {
               Computer Science Student @ Tsinghua University
             </p>
             <p className="text-blue-500 font-medium mb-6">
-              姚班 (Yao Class) | GPA: 3.81/4.00
+              姚班 (Yao Class) | GPA: 3.8/4.0
             </p>
             <p className="text-gray-600 mb-8 max-w-lg mx-auto md:mx-0 leading-relaxed">
               Passionate about <span className="text-blue-500 font-medium">Spatial Intelligence</span>,{' '}
@@ -95,7 +95,7 @@ export default function Hero() {
                 <Mail className="w-5 h-5" />
               </a>
               <a
-                href="https://github.com"
+                href="https://github.com/crabxiexy"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-blue-500 hover:text-white transition-all duration-300 hover:scale-110"
