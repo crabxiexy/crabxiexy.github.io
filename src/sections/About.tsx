@@ -68,14 +68,9 @@ export default function About() {
             <div className="space-y-4 text-gray-600 leading-relaxed">
               <p>
                 I am an undergraduate student at Tsinghua University's{' '}
-                <a
-                  href="https://iiis.tsinghua.edu.cn/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-medium text-gray-800 hover:text-blue-600 hover:underline underline-offset-4"
-                >
+                <span className="font-medium text-gray-800">
                   Institute for Interdisciplinary Information Sciences (IIIS)
-                </a>
+                </span>
                 , also known as the prestigious{' '}
                 <span className="text-blue-500 font-medium">Yao Class</span>.
               </p>
