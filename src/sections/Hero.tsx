@@ -80,6 +80,19 @@ export default function Hero() {
               <Button
                 asChild
                 variant="outline"
+                className="border-2 border-gray-300 text-gray-700 hover:bg-gray-50 px-8 py-3 rounded-lg transition-all duration-300 hover:scale-105"
+              >
+                <a
+                  href="./papers/xll_CV.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Resume (PDF)
+                </a>
+              </Button>
+              <Button
+                asChild
+                variant="outline"
                 className="border-2 border-blue-500 text-blue-500 hover:bg-blue-50 px-8 py-3 rounded-lg transition-all duration-300 hover:scale-105"
               >
                 <a href="#contact">Contact Me</a>

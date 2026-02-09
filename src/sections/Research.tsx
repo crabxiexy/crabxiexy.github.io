@@ -7,7 +7,10 @@ const researchData = [
     role: 'Research Intern',
     period: 'December 2025 - Present',
     focus: 'Spatial intelligence and AI agents',
-    advisor: 'Professor Yueqi Duan',
+    advisor: {
+      label: 'Professor Yueqi Duan',
+      href: 'https://duanyueqi.github.io/',
+    },
     icon: Microscope,
   },
   {
@@ -15,11 +18,15 @@ const researchData = [
     role: 'Research Intern',
     period: 'September 2024 - December 2025',
     focus: 'Humanoid locomotion and robotic arm manipulation',
-    advisor: 'Professor Li Yi',
+    advisor: {
+      label: 'Professor Li Yi',
+      href: 'https://ericyi.github.io/',
+    },
     icon: Building2,
   },
   {
     lab: 'Galbot Humanoid Group',
+    labHref: 'https://www.galbot.com/',
     role: 'Researcher',
     period: 'June 2025 - September 2025',
     focus: 'Humanoid robotics research and development',
@@ -83,7 +90,20 @@ export default function Research() {
                   <item.icon className="w-6 h-6 text-blue-500" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-gray-800">{item.lab}</h3>
+                  <h3 className="font-semibold text-gray-800">
+                    {'labHref' in item && item.labHref ? (
+                      <a
+                        href={item.labHref}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:text-blue-600 hover:underline underline-offset-4"
+                      >
+                        {item.lab}
+                      </a>
+                    ) : (
+                      item.lab
+                    )}
+                  </h3>
                   <p className="text-sm text-blue-500">{item.role}</p>
                 </div>
               </div>
@@ -102,7 +122,14 @@ export default function Research() {
                   {item.advisor && (
                     <p className="text-sm text-gray-500">
                       <span className="font-medium text-gray-700">Advisor:</span>{' '}
-                      {item.advisor}
+                      <a
+                        href={item.advisor.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:text-blue-600 hover:underline underline-offset-4"
+                      >
+                        {item.advisor.label}
+                      </a>
                     </p>
                   )}
                 </div>

@@ -7,6 +7,7 @@ const publications = [
     venue: 'AAAI26 PerFM Workshop',
     role: 'Co-first Author',
     period: 'July 2025 - September 2025',
+    paperHref: './papers/23_Controlled_Text_Generation_.pdf',
     description:
       'Developed an efficient pipeline for controlling text generation in diffusion large language models by integrating lightweight classifier guidance.',
     highlights: [
@@ -114,10 +115,26 @@ export default function Publications() {
 
                 {/* Action */}
                 <div className="flex-shrink-0">
-                  <button className="inline-flex items-center gap-2 px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors">
-                    <span>View Paper</span>
-                    <ExternalLink className="w-4 h-4" />
-                  </button>
+                  {pub.paperHref ? (
+                    <a
+                      href={pub.paperHref}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors"
+                    >
+                      <span>View Paper</span>
+                      <ExternalLink className="w-4 h-4" />
+                    </a>
+                  ) : (
+                    <button
+                      type="button"
+                      disabled
+                      className="inline-flex items-center gap-2 px-4 py-2 bg-gray-200 text-gray-500 rounded-lg cursor-not-allowed"
+                    >
+                      <span>View Paper</span>
+                      <ExternalLink className="w-4 h-4" />
+                    </button>
+                  )}
                 </div>
               </div>
             </div>

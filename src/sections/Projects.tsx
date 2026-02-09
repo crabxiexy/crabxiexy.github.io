@@ -6,6 +6,7 @@ import {
   Music,
   Film,
   Droplets,
+  FileText,
   Calendar,
   Users,
   ArrowUpRight,
@@ -18,6 +19,7 @@ const projects = [
     course: 'Intelligent Systems and Robots',
     period: 'October 2025 - January 2026',
     collaborators: 'Yingxi Lu, Zhuo Cao',
+    pdfHref: './papers/ISR_final.pdf',
     description:
       'Extended the Dynamic Handover work by introducing a Physical Property Estimator network to improve generalization across object physical properties.',
     highlights: [
@@ -34,6 +36,7 @@ const projects = [
     course: 'Embodied AI',
     period: 'April 2025 - May 2025',
     collaborators: 'Yingxi Lu, Zhuo Cao',
+    pdfHref: './papers/EAI_Report.pdf',
     description:
       'Proposed a disentangled policy architecture separating proprioception, spatial, and geometric encoding modules to preserve geometry-level generalization.',
     highlights: [
@@ -49,6 +52,7 @@ const projects = [
     course: 'Natural Language Processing',
     period: 'April 2025 - May 2025',
     collaborators: 'Yihan Xu, Zhuo Cao, Peiqi Duan',
+    pdfHref: './papers/SIGHT__Safety_Insight_Generation_and_Hazard_awareness_Transfer.pdf',
     description:
       'Developed a two-stage framework to distill safety reasoning capabilities from frontier LLMs to lightweight models.',
     highlights: [
@@ -65,6 +69,7 @@ const projects = [
     course: 'Deep Learning',
     period: 'April 2025 - June 2025',
     collaborators: 'Zhuo Cao, Yingxi Lu, Fangyu Zhu',
+    pdfHref: './papers/DL_Final_Report.pdf',
     description:
       'Designed a pipeline to automatically generate dance videos from arbitrary music and a single reference image.',
     highlights: [
@@ -81,6 +86,7 @@ const projects = [
     course: 'Computer Vision',
     period: 'April 2025 - May 2025',
     collaborators: 'Jiayi Hu',
+    pdfHref: './papers/CV-report.pdf',
     description:
       'Developed a two-stage framework to restore and colorize old black-and-white videos.',
     highlights: [
@@ -97,6 +103,7 @@ const projects = [
     course: 'Advanced Computer Graphics',
     period: 'September 2024 - January 2025',
     collaborators: 'Songbo Hu',
+    pdfHref: './papers/ACG_final.pdf',
     description:
       'Developed a complete simulation and rendering pipeline for rigid body and fluid dynamics based on WCSPH and DFSPH methods.',
     highlights: [
@@ -173,9 +180,25 @@ export default function Projects() {
                     <p className="text-sm text-gray-500">{project.subtitle}</p>
                   </div>
                 </div>
-                <button className="opacity-0 group-hover:opacity-100 transition-opacity p-2 hover:bg-gray-100 rounded-lg">
-                  <ArrowUpRight className="w-5 h-5 text-gray-400" />
-                </button>
+                {project.pdfHref ? (
+                  <a
+                    href={project.pdfHref}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="opacity-0 group-hover:opacity-100 transition-opacity p-2 hover:bg-gray-100 rounded-lg inline-flex items-center gap-2"
+                    aria-label={`Open ${project.title} PDF`}
+                  >
+                    <FileText className="w-5 h-5 text-gray-400" />
+                    <span className="text-xs font-medium text-gray-500">PDF</span>
+                  </a>
+                ) : (
+                  <button
+                    type="button"
+                    className="opacity-0 group-hover:opacity-100 transition-opacity p-2 hover:bg-gray-100 rounded-lg"
+                  >
+                    <ArrowUpRight className="w-5 h-5 text-gray-400" />
+                  </button>
+                )}
               </div>
 
               {/* Meta */}
